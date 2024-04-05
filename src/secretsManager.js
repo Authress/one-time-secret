@@ -18,6 +18,7 @@ class SecretsManager {
         encryptedSecret,
         createdTime: now.toISO(),
         lastUpdated: now.toISO(),
+        consumedAtTime: null,
         TTL: Math.round(now.plus(ttlDuration).toSeconds())
       },
       ConditionExpression: 'attribute_not_exists(secretId)'
